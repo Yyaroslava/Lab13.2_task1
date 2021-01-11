@@ -1,21 +1,28 @@
+// lab13.2.cpp
+
+#include <stdio.h>
+#include <conio.h>
 #include "lab13.2.h"
 
-void main() {
+int main() {
 	char ch;
-	int x, y, z;
+	int x, y;
 	do {
-		puts("Input 3 integer numbers: ");
+		puts("Input 2 integer numbers: ");
 		INPUT("x: ", x);
 		INPUT("y: ", y);
-		INPUT("z: ", z);
-		int w = Calc(x, y, z);
+		int w = Calc(x, y);
 		PRINT(w);
 		puts("Continue? (y/n) ");
 		ch = _getch();
-	}
-	while (ch != 'n');
+	} while (ch != 'n');
+	return 0;
 }
 
-int Calc(int x, int y, int z) {
-	return TERN(z > 3, MAX(SQR(x + y), SQR(x - z)), MIN(x * y + y * z, SQR(z * x + y * z)));
+int Calc(int x, int y) {
+#if (Z > 3)
+	return MAX(SQR(x + y), SQR(x - Z));
+#else
+	return MIN(x * y + y * Z, SQR(Z * x + y * Z));
+#endif
 }
